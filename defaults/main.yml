@@ -1,0 +1,67 @@
+---
+
+# Host Nebula will be listening on.
+nebula_host: "0.0.0.0"
+
+# Port Nebula will be listening on.
+# For a lighthouse node, the port should be defined,
+# however using port 0 will dynamically assign a port.
+nebula_port: 4242
+
+# Nebula private subnet size
+nebula_subnet: "8"
+
+# Nebula group names
+nebula_groups: "nebula,node"
+
+# panic, fatal, error, warning, info, or debug
+nebula_log_level: "info"
+
+# json or text formats currently available
+nebula_log_format: "text"
+
+# Name of the tun device
+nebula_dev_tun: "nebula1"
+
+# Default MTU for every packet, safe setting is 1300 for internet based traffic
+nebula_mtu: 1300
+
+# Transmit queue length
+nebula_tx_queue: 500
+
+# nebula_lighthouse is used to enable lighthouse functionality for a node
+nebula_lighthouse: "false"
+
+# serve_dns starts a dns listener
+nebula_dns: "false"
+
+# The DNS porn defines the port to bind the dns listener to.
+nebula_dns_port: 53
+
+# The DNS host defines the IP to bind the dns listener to
+nebula_dns_host: "0.0.0.0"
+
+# number of seconds between updates from this node to a lighthouse
+nebula_update_interval: "60"
+
+# Prometheus metrics will be available at that host, port and path
+nebula_prometheus_host: "127.0.0.1"
+nebula_prometheus_port: 9091
+nebula_prometheus_path: metrics
+
+# Toggles forwarding of multicast packets
+nebula_drop_multicast: "false"
+
+# Toggles forwarding of local broadcast packets
+# the address of which depends on the ip/mask encoded in pki.cert
+nebula_drop_local_broadcast: "false"
+
+nebula_inbound_rules: |
+  - port: any
+    proto: icmp
+    host: any
+
+nebula_outbound_rules: |
+  - port: any
+    proto: any
+    host: any

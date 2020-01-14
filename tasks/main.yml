@@ -1,0 +1,12 @@
+---
+- name: "Add users"
+  include: "user_add.yml"
+
+- name: "Prepare system"
+  include: "prepare_for_nebula.yml"
+
+- name: "Install Nebula"
+  include: "install_nebula.yml"
+
+- name: "Generate certificates"
+  include: "gen_cert.yml"

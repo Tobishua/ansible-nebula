@@ -1,0 +1,7 @@
+---
+- name: Start Nebula node service
+  systemd:
+    name: nebula
+    state: started
+    enabled: true
+    daemon_reload: true

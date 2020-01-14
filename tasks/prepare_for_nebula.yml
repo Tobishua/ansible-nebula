@@ -1,0 +1,10 @@
+---
+- name: Creates nebula's app directory
+  file:
+    path: /var/lib/nebula
+    state: directory
+
+- name: Creates nebula's etc directory
+  file:
+    path: /etc/nebula
+    state: directory

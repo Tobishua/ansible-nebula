@@ -1,0 +1,13 @@
+---
+- name: Ensure group "nebula" exists
+  group:
+    name: nebula
+    state: present
+
+- name: Add the user 'nebula'
+  user:
+    name: nebula
+    comment: Nebula Node user
+    group: nebula
+    create_home: false
+    shell: /usr/bin/false
